@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct SecondView: View {
-    var body: some View {
-        Text("Challenge 2")
-    }
+	
+	let words = [
+	"wood", "apple", "mink", "oblong", "obvious", "forget", "race", "yesterday", "leader", "onion", "many", "horse", "beaver", "twirp", "fool"
+	]
+	
+	var body: some View {
+			List(words, id: \.self) {
+				Text($0)
+			}
+		.navigationBarTitle(Text("Word Scramble"))
+	}
 }
 
 struct SecondView_Previews: PreviewProvider {
-    static var previews: some View {
-        SecondView()
-    }
+	static var previews: some View {
+		SecondView()
+	}
 }
