@@ -17,10 +17,11 @@ struct SecondView: View {
 		List {
 			ForEach(0..<words.count) { i in
 				GeometryReader { geo in
+					let scale = Double(i) * 0.01
 					let xOffset =  i < 5
 						? 10.0
-						: geo.frame(in: .local).minX + geo.frame(in: .global).minY * 0.05
-					Text(words[i])
+						: 10.0 + geo.frame(in: .global).minY * CGFloat(scale)
+					Text("\(words[i])")
 						.offset(CGSize(width: xOffset, height: 10.0))
 				}
 			}
