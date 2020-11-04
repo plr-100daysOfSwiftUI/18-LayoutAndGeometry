@@ -14,9 +14,13 @@ struct SecondView: View {
 	]
 	
 	var body: some View {
-			List(words, id: \.self) {
-				Text($0)
+		List(words, id: \.self) { word in
+			GeometryReader { geo in
+				let xOffset = geo.frame(in: .local).minX + geo.frame(in: .global).minY * 0.3
+				Text(word)
+					.offset(CGSize(width: xOffset, height: 10.0))
 			}
+		}
 		.navigationBarTitle(Text("Word Scramble"))
 	}
 }
