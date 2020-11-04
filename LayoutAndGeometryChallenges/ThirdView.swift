@@ -13,9 +13,13 @@
 		]
 		
 		var body: some View {
-			List(words, id: \.self) {
-				Image(systemName: "\($0.count).circle")
-				Text($0)
+			List {
+				ForEach(0..<words.count) { i in
+					HStack {
+						Image(systemName: "\(words[i].count).circle")
+						Text(words[i])
+					}
+				}
 			}
 			.navigationBarTitle(Text("Word Scramble"))
 		}
