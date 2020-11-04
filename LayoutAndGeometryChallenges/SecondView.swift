@@ -10,7 +10,7 @@ import SwiftUI
 struct SecondView: View {
 	
 	let words = [
-		"wood", "apple", "mink", "oblong", "obvious", "forget", "race", "yesterday", "leader", "onion", "many", "horse", "beaver", "twirp", "fool"
+		"wood", "apple", "mink", "oblong", "obvious", "forget", "race", "yesterday", "leader", "onion", "many", "horse", "beaver", "twirp", "fool", "heavy", "light", "dark", "shadow", "merry", "funeral", "pyre", "expeditionary"
 	]
 	
 	var body: some View {
