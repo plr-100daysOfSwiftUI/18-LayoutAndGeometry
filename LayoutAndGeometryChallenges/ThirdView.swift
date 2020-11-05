@@ -15,7 +15,7 @@
 		var body: some View {
 			GeometryReader { fullView in
 				List {
-					ForEach(0..<words.count) { i in
+					ForEach(words.indices) { i in
 						GeometryReader { geo in
 							// the distance from the top of the screen
 							let min = fullView.frame(in: .global).minY
