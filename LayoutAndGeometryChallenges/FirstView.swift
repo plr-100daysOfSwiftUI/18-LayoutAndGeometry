@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FirstView: View {
-    var body: some View {
+	var body: some View {
 		GeometryReader { geometry in
 			ScrollView(.vertical) {
 				VStack {
@@ -27,11 +27,11 @@ struct FirstView: View {
 			}
 		}
 		.navigationBarTitle(Text("Apollo 11"), displayMode: .inline)
-    }
+	}
 }
 
 struct FirstView_Previews: PreviewProvider {
-    static var previews: some View {
-        FirstView()
-    }
+	static var previews: some View {
+		FirstView()
+	}
 }
