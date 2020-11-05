@@ -13,11 +13,29 @@
 		]
 		
 		var body: some View {
-			List {
-				ForEach(0..<words.count) { i in
-					HStack {
-						Image(systemName: "\(words[i].count).circle")
-						Text(words[i])
+			GeometryReader { fullView in
+				List {
+					ForEach(0..<words.count) { i in
+						GeometryReader { geo in
+							// the distance from the top of the screen
+							let min = fullView.frame(in: .global).minY
+							// the maximum position
+							let max = fullView.frame(in: .global).maxY
+							// the current position less the distance to the top of the screen
+							let current = geo.frame(in: .global).minY - min
+							
+							let red = 1.0
+							let green = Double(current / max)
+							let blue = 1.0 - green
+							
+							let color = Color(red: red, green: green, blue: blue)
+							
+							HStack {
+								Image(systemName: "\(words[i].count).circle")
+									.foregroundColor(color)
+								Text(words[i])
+							}
+						}
 					}
 				}
 			}
