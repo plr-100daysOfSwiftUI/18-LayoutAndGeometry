@@ -15,7 +15,7 @@ struct SecondView: View {
 	
 	var body: some View {
 		List {
-			ForEach(0..<words.count) { i in
+			ForEach(words.indices) { i in
 				GeometryReader { geo in
 					let scale = Double(i) * 0.01
 					let xOffset =  i < 5
