@@ -21,7 +21,7 @@ struct SecondView: View {
 					let xOffset =  i < 5
 						? 10.0
 						: 10.0 + geo.frame(in: .global).minY * CGFloat(scale)
-					Text("\(words[i])")
+					Text(words[i])
 						.offset(CGSize(width: xOffset, height: 10.0))
 				}
 			}
